@@ -17,3 +17,4 @@ Run the app
 -----------
 
 Run `yarn dev` to start the todo app.
+# learn-graphql-frontend-nextjs
