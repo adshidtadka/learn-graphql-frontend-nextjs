@@ -18,19 +18,6 @@ const GET_MY_TODOS = gql`
   }
 `;
 
-const TodoPrivateListQuery = () => {
-  const { loading, error, data } = useQuery(GET_MY_TODOS);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-  if (error) {
-    console.error(error);
-    return <div>Error!</div>;
-  }
-  return <TodoPrivateList todos={data.todos} />;
-};
-
 const TodoPrivateList = (props) => {
   const [state, setState] = useState({
     filter: "all",
@@ -75,6 +62,19 @@ const TodoPrivateList = (props) => {
       />
     </Fragment>
   );
+};
+
+const TodoPrivateListQuery = () => {
+  const { loading, error, data } = useQuery(GET_MY_TODOS);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    console.error(error);
+    return <div>Error!</div>;
+  }
+  return <TodoPrivateList todos={data.todos} />;
 };
 
 export default TodoPrivateListQuery;
